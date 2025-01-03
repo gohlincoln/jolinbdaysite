@@ -1,0 +1,579 @@
+header {
+  text-align: center;
+  padding-top: 2rem;
+}
+#bouncing-wrapper {
+  position: fixed; /* Sticks as you scroll */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff6347; /* A playful color */
+  font-family: "Comic Sans MS", sans-serif;
+  animation: wobble 1.5s infinite;
+}
+h2 {
+  color: #ff69b4;
+}
+.text-pink {
+  color: #ff69b4;
+}
+
+#sub-header {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #ff69b4; /* Another playful color */
+  font-family: "Comic Sans MS", sans-serif;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Wobble effect for the header */
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Fade-in effect for the paragraph */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide overflow to prevent scrolling */
+  height: 100vh;
+}
+
+#bouncing-wrapper {
+  overflow: hidden;
+  position: relative; /* Ensures the bouncing image is contained within this div */
+  width: 120px; /* Adjust width as needed to fit image and text */
+  text-align: center;
+}
+
+#bouncing-image {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+}
+
+#adhd-text {
+  font-size: 1rem;
+  color: #555; /* Adjust color as needed */
+  font-family: Arial, sans-serif;
+  margin-top: 5px; /* Space between image and text */
+}
+
+.carousel {
+  max-width: 600px; /* Adjust maximum width as per your design */
+  margin: auto; /* Center-align the carousel */
+  margin-bottom: 40px;
+}
+
+.carousel-img {
+  width: 100%; /* Make the image responsive */
+  height: 400px; /* Set a fixed height */
+  object-fit: cover; /* Maintain aspect ratio while filling the container */
+}
+
+.carousel-caption h5 {
+  font-size: 2rem; /* Increases the font size */
+  font-weight: bold; /* Makes the text bold */
+  color: #fff; /* Changes the text color to white for better contrast */
+}
+
+.carousel-caption p {
+  font-size: 1.2rem; /* Increases the font size */
+  color: #fff; /* Changes the text color to white for better contrast */
+}
+
+/* Add a semi-transparent background to make text stand out more */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+  padding: 10px;
+  border-radius: 5px; /* Slightly rounds the corners */
+  bottom: 20px; /* Positions caption slightly higher above the bottom */
+}
+
+/* Optional: Center-align text for a balanced look */
+.carousel-caption {
+  text-align: center;
+}
+
+.bsb-hero-1 {
+  background-size: cover; /* Ensures the image covers the entire hero section */
+  background-position: center; /* Centers the image to prevent top or bottom cropping */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Sets the hero section to the full viewport height */
+  display: flex;
+  align-items: center; /* Centers content vertically within the hero section */
+}
+
+#carouselExampleIndicators {
+  margin-top: -30px; /* Adjust this to make it closer to the header */
+}
+
+/* Add padding to increase the space between the carousel and the text */
+.col-md-6:last-child {
+  padding-left: 20px; /* Increase as needed to push the carousel right */
+}
+
+.container.my-4 {
+  margin-top: 0 !important;
+}
+
+/* CSS for CARD */
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px; /* Space between the carousel and card */
+}
+
+.card {
+  width: 80vw; /* 80% of the viewport width */
+  height: 80vh; /* 80% of the viewport height */
+  margin: auto;
+  -webkit-perspective: 2500px;
+  perspective: 2500px;
+  transition: 1s;
+}
+
+.card:hover {
+  transform: rotate(-3deg);
+}
+
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  line-height: 1.5;
+  padding: 0 50px; /* More padding for extra content space */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
+}
+
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+
+.front {
+  background-color: #ffffff;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+}
+
+/* Cake Layers */
+.cake {
+  width: 100%;
+  position: absolute;
+  bottom: 60px; /* Adjusted positioning for larger card */
+}
+
+.top-layer,
+.middle-layer,
+.bottom-layer {
+  height: 150px; /* Increased height for larger cake layers */
+  width: 450px; /* Increased width for larger cake layers */
+  background-repeat: repeat;
+  background-size: 60px 100px;
+  background-position: 28px 0;
+  background-image: linear-gradient(
+      transparent 50px,
+      #fedbab 50px,
+      #fedbab 60px,
+      transparent 60px
+    ),
+    radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  margin: auto;
+}
+
+.middle-layer {
+  transform: scale(0.85);
+  top: 10px; /* Adjusted for larger layout */
+}
+
+.top-layer {
+  transform: scale(0.7);
+  top: 35px; /* Adjusted for larger layout */
+}
+
+/* Candle */
+.candle {
+  height: 80px; /* Increased height */
+  width: 30px; /* Increased width */
+  background: repeating-linear-gradient(
+    45deg,
+    #fd3018 0,
+    #fd3018 5px,
+    #ffa89e 5px,
+    #ffa89e 10px
+  );
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 350px; /* Adjusted for larger layout */
+}
+
+.candle:before {
+  content: "";
+  position: absolute;
+  height: 30px; /* Increased height */
+  width: 30px; /* Increased width */
+  background-color: #ffa500;
+  border-radius: 0 50% 50% 50%;
+  bottom: 55px;
+  transform: rotate(45deg);
+  left: -2px;
+}
+
+.outside p {
+  font-size: 36px; /* Increased font size */
+  text-transform: uppercase;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: 6px;
+  color: #000046;
+}
+
+.inside h1 {
+  font-size: 180px; /* Increased font size */
+  line-height: 180px;
+}
+
+.inside p {
+  font-size: 28px; /* Adjusted font size for longer text */
+  margin-top: 20px;
+}
+
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to start at the top */
+  justify-content: flex-start; /* Start content at the top */
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100%; /* Ensure it fills the card height */
+  max-height: 100%; /* Restrict scrolling within card's full height */
+}
+
+.birthday-message {
+  font-size: 1.1rem; /* Reduced font size */
+  line-height: 1.4; /* Adjusted line height */
+  color: #333;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for sections within the message */
+.birthday-message p {
+  margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+#carouselExampleIndicators {
+  margin-top: 40px; /* Add space above the carousel */
+}
+.message-card {
+  width: 100%;  /* Full width within column */
+  max-width: 380px; /* Wider cards */
+  height: 150px;  /* Shorter card height */
+  margin: 0 auto; /* Center the cards */
+  border: 1px solid #ff69b4;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px 20px;  /* Reduced padding for less height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #ff69b4;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 1rem;  /* Compact name size */
+}
+
+.card-text {
+  font-size: 0.85rem;  /* Smaller text for tighter fit */
+  line-height: 1.3;
+  margin-bottom: 0;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.birthday-img {
+  width: 80%;  /* Make it take the full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the image */
+  max-height: 600px;  /* Remove height limit */
+  object-fit: unset;  /* No cropping or resizing */
+}
+.front .birthday-img {
+  width: 80%;  /* Full width of the card */
+  height: auto;
+  max-height: 600px;  /* Let it scale fully */
+  display: block;
+  margin: 0 auto;
+}
+
+.back .back-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Keeps back image properly contained */
+}
+.message-card {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto 20px;
+  border: 1px solid #ff69b4;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  height: 400px;  /* Fixed height for uniformity */
+  overflow: hidden;
+}
+
+.message-card img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;  /* Keep image height under control */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.message-card .text-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 180px;  /* Text section scrolls within a limited space */
+  padding: 10px 0;
+}
+
+.message-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
+  white-space: normal;
+}
+.message-card {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto 20px;
+  border: 1px solid #ff69b4;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  height: 400px; /* Ensure consistent card heights */
+  overflow: hidden;
+}
+
+.message-card img {
+  width: 100%;
+  height: auto;
+  max-height: 180px; /* Keep image height under control */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.row.justify-content-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Ensures cards align at the top */
+  flex-wrap: wrap; /* Ensures cards stay in a row on smaller screens */
+}
+.message-card {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto 20px;
+  border: 1px solid #ff69b4;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  height: 400px;  /* Ensures consistent card heights */
+  overflow: hidden;
+}
+
+.text-pink {
+  color: #ff69b4;
+} /* Custom pink color */
+
+.carousel-img {
+  height: 500px;
+  object-fit: cover;
+} /* Consistent carousel image size */
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Custom Card Styling */
+.custom-card {
+  border: 1px solid #ff69b4; /* Pink border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-card .card-title, 
+.custom-card .card-text {
+  color: #ff69b4; /* Pink text */
+}
+
+.custom-card .card-body {
+  background-color: #fff0f6; /* Light pink background */
+  border-radius: 0 0 15px 15px;
+}
+.smaller-img {
+  height: 150px;  /* Adjust height as needed */
+  object-fit: cover;  /* Ensures the image scales without distortion */
+}
+
+.scrollable-text {
+  max-height: 100px;  /* Set the height limit for the text */
+  overflow-y: auto;  /* Enables vertical scrolling if the text exceeds the height */
+}
+
+.card-text {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar for Webkit (Chrome, Safari) */
+.card-text::-webkit-scrollbar {
+  display: none;
+}
+
+.music-player {
+  display: flex;
+  justify-content: space-around; /* Spread out horizontally */
+  align-items: center;
+  gap: 30px; /* Space between each track */
+  margin: 30px 0;
+  flex-wrap: wrap; /* Wrap if it overflows */
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="range"] {
+  width: 150px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #cce7ff;
+  outline: none;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background-color: #90caf9;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #64b5f6;
+  transform: translateY(-2px);
+}

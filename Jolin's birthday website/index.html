@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jolin's birthday website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Additional styling for custom elements */
+      .text-pink {
+        color: #ff69b4;
+      } /* Custom pink color */
+      .carousel-img {
+        height: 500px;
+        object-fit: cover;
+      } /* Consistent carousel image size */
+      .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .card-body {
+        max-height: 150px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="text-center" style="margin-bottom: 20px">
+      <h1 class="fw-bold">Happy Birthday Jolin</h1>
+      <p class="lead text-muted">
+        Lowkey, I was gonna retire this site because it felt a little too personal… BUT since your sister gave you a nendoroid too, I guess I’m keeping it alive. This is basically a highlight reel of all the random, unforgettable moments we’ve had over the years. It’s funny how the smallest things end up meaning the most.
+
+So yeah, here’s to more chaos, more adhd, and more random core memories we probably won’t realize are important until way later.
+      </p>
+    </header>
+    <div
+    id="bouncing-wrapper"
+    class="d-flex justify-content-center align-items-center"
+  >
+    <div class="text-center">
+      <img
+        src="https://i.pinimg.com/originals/82/72/1a/82721a2e59436c12f6c0d04d8083d624.jpg"
+        id="bouncing-image"
+        alt="Bouncing Image"
+        class="img-fluid"
+        style="width: 150px"
+      />
+      <p id="adhd-text" class="mt-2">for your ADHD</p>
+    </div>
+  </div>
+
+    <!-- Bouncing Image Section -->
+    <div class="music-player">
+      <div class="track">
+          <input 
+              type="range" 
+              id="volumeSlider1" 
+              min="0" 
+              max="1" 
+              step="0.05" 
+              value="0.3" 
+              onchange="setVolume('birthdayAudio1', this.value)"
+          >
+          <button id="playPauseBtn1" onclick="toggleMusic('birthdayAudio1', 'playPauseBtn1')">
+              🎵 Blue (yung kai)
+          </button>
+          <audio id="birthdayAudio1" loop>
+              <source src="/audio/blue.mp3" type="audio/mpeg">
+          </audio>
+      </div>
+  
+      <div class="track">
+          <input 
+              type="range" 
+              id="volumeSlider2" 
+              min="0" 
+              max="1" 
+              step="0.05" 
+              value="0.3" 
+              onchange="setVolume('birthdayAudio2', this.value)"
+          >
+          <button id="playPauseBtn2" onclick="toggleMusic('birthdayAudio2', 'playPauseBtn2')">
+              🎵 Artic Monkeys
+          </button>
+          <audio id="birthdayAudio2" loop>
+              <source src="/audio/artic.mp3" type="audio/mpeg">
+          </audio>
+      </div>
+  
+      <div class="track">
+          <input 
+              type="range" 
+              id="volumeSlider3" 
+              min="0" 
+              max="1" 
+              step="0.05" 
+              value="0.3" 
+              onchange="setVolume('birthdayAudio3', this.value)"
+          >
+          <button id="playPauseBtn3" onclick="toggleMusic('birthdayAudio3', 'playPauseBtn3')">
+              🎵 Daddy Issues
+          </button>
+          <audio id="birthdayAudio3" loop>
+              <source src="/audio/DaddyIssues.mp3" type="audio/mpeg">
+          </audio>
+      </div>
+  </div>
+  
+    <!-- Carousel and Text Section -->
+    <article class="container my-4">
+      <div class="row">
+        <!-- Left Column with Text -->
+        <div class="col-md-6 d-flex align-items-center">
+          <div>
+            <h2 class="fw-bold">Still Standing (Somehow)</h2>
+            <p class="lead">
+              It’s been 4+ years and somehow we’re still here. Honestly, I’m not sure if that’s dedication or just straight-up stubbornness. If there was an award for sticking around this long, we’d probably forget about it until like three months later.
+            </p>
+            
+          </div>
+        </div>
+
+        <!-- Right Column with Carousel -->
+        <div class="col-md-6 mt-4" style="margin-left: 0px">
+          <h2 class="text-center my-4 fw-bold">The Highlight Reel</h2>
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <ol class="carousel-indicators">
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="3"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="4"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="5"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="6"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="7"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="8"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="9"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="10"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="11"
+              ></li>
+              <li
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="12"
+              ></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="/images/pic4.jpg" alt="pic4" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>19 August 2021</h5>
+                      <p>The Earliest photo I could find</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic5.jpg" alt="pic5" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>19 August 2021</h5>
+                      <p>First time quartet went out, I think?</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic11.jpg" alt="pic6" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>19 August 2021</h5>
+                      <p>I MADE THIS</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic6.jpg" alt="pic7" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>9 October 2021</h5>
+                      <p>Scooterrrrr</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic8.jpg" alt="pic8" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>8 December 2021</h5>
+                      <p>Beach episode (we gave up after 5 minutes and went bowling)</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic7.jpg" alt="pic7" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>17 March 2022</h5>
+                      <p>Ice skating</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic9.jpg" alt="pic9" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>18 September 2022</h5>
+                      <p>We started talking again? feels like it was just yesterday</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic12.jpg" alt="pic12" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>19 August 2021</h5>
+                      <p>You get to leave TK</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic2.jpg" alt="pic2" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>21 August 2024</h5>
+                      <p>Kinda a big day, ngl</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic1.jpg" alt="pic1" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>17 September 2024</h5>
+                      <p>Aaron's Birthday, everyone had a bad haircut</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="/images/pic3.jpg" alt="pic3" class="carousel-img" />
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>26 September 2024</h5>
+                      <p>Stupid Chigga Christian lost a knife fight with a gun</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/images/secretsanta.jpg" alt="pic3" class="carousel-img" />
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>29 December 2024</h5>
+                    <p>I GOT SCAMMED</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+              <img src="/images/christian0.5.jpg" alt="pic3" class="carousel-img" />
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>29 December 2024</h5>
+                  <p>chrsitian 0.5</p>
+              </div>
+          </div>
+          </div>
+          <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+    </article>
+
+    <div class="card-container">
+      <div class="card">
+        <div class="outside">
+          <div class="front">
+            <p>Happy Birthday</p>
+            <div class="cake">
+              <img src="/images/sunacard.jpg" alt="Birthday image" class="birthday-img" />
+            </div>
+          </div>
+          <div class="back">
+            <img src="/images/akane.png" alt="Back of the card" class="back-img" />
+          </div>
+        </div>
+        <div class="inside">
+          <p class="birthday-message">
+            <div>
+              <p>
+                  Okay first off, right – you see that Akane on the left? That’s me after your sister bought you the same DAMN SUNA NENDOROID.<br>
+                  I'm telling you, there’s only so much Suna one room can handle.  
+              </p>
+              
+              <p>
+                  Anyway, it’s your birthday, so happy bday chocolate girl 🎉🎉.  
+              </p>
+          
+              <p>
+                  So, 19 now huh? Old ass mf.<br>
+                  Still as much of a dork as usual though. I swear, the older you get, the more unhinged your sense of humor becomes. At this rate, you’ll be laughing at static by 25.  
+              </p>
+          
+              <p>
+                  Jokes aside, even though we haven’t been talking much (or as much as usual? I think??) recently, you’re still one of the most fun, weird, contagiously ADHD people I know.<br>
+                  The type of person who can make walking through a grocery store or messing around at a playground feel like an adventure.  
+              </p>
+          
+              <p>
+                  Whether it’s your completely broken sense of humor, your talent for making the worst days bearable, or the way you make people feel seen without even realizing it <br>
+                  you’re always someone I’m glad to have around.  
+              </p>
+          
+              <p>
+                  You’ve got this thing where life feels a little less serious with you there.<br>
+                  Tap-dancing in MRT stations, falling in love with creepypasta characters, or just making everyone laugh with the most random stuff  <br>
+                  you make the world brighter without even trying.  
+              </p>
+          
+              <p>
+                  I hope today’s packed with all your favorite things Ben & Jerry’s chocolate chip ice cream, Suna Rintarou, and just enough chaos to keep you entertained.<br>
+                  Here’s to another year of you being you, lighting things up one smile at a time.  
+              </p>
+          
+              <p>
+                  And wow, that got sentimental fast.<br>
+                  Aight, happy 19th!! Don’t break anything celebrating.  
+              </p>
+          
+              <p>
+                  With regards,<br>
+                  your goat  
+              </p>
+          </div>
+          
+          
+          </p>
+          <h1>&#127873;</h1>
+        </div>
+      </div>
+    </div>
+
+    
+     
+  
+    <section id="comment-board" class="container my-5">
+      <h2 class="text-center fw-bold">Your Personal Comment Board 🎂</h2>
+      <p class="text-center text-muted">
+        I asked the people that know you best to write here, so you always have something to look at if you need it.
+      </p>
+      <p class="text-center text-muted">
+       Also the images are clickable god you have no idea how long it took to make that AHFIYsbhdwgseghvbguh
+      </p>
+    
+      <div class="row justify-content-center mt-4">
+        <!-- Sieon's Card -->
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+            <img
+              src="/images/sieon.jpg"c:\Users\gohli\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\B2FDB4E6EDCD80ED0C1620DDF6FF5389\WhatsApp Video 2025-01-03 at 15.00.36_6846d296.mp4
+              class="card-img-top"
+              alt="Sieon's Photo"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModalSieon"
+            />
+            <div class="card-body">
+              <h6 class="card-title">Sieon</h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                meeting you was one of my biggest blessing in 2024, im really grateful for all the times we’ve spent together. thank you for always being there for me when you know i needed it the most and you’re literally drop-dead gorgeous in every way. let’s get closer 🫶🏻
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- XY's Card -->
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+            <img
+              src="/images/xy.jpg"
+              class="card-img-top"
+              alt="XY's Photo"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModalXY"
+            />
+            <div class="card-body">
+              <h6 class="card-title">XY</h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                When I met you at the chainsaw man photoshoot, I never thought I’d be meeting the best coswife that stuck by me throughout 2024. You’ve been there for me with all my ridiculous wuhluhwuh cosplans and I’m super grateful to have you in my life. You’ve made 2024 such a highlight just by being in it and I’d love to stay by your side for longer. Happy birthday, wifey!
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Stella's Card -->
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+            <img
+              src="/images/stella.jpg"
+              class="card-img-top"
+              alt="Stella's Photo"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModalStella"
+            />
+            <div class="card-body">
+              <h6 class="card-title">Stella</h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                To Lin my favourite cosplayer: Have a very very happy 19th birthdayy!!! I’m so sad we couldn’t get to meet each other for the last time in 2024 but lets make sure we catch that hatsune miku movie coming out soon okay?? Also I’m definitely going to make time to hang out with you and yh again so keep your schedule open! Let’s pray that your intern starts in sem 2 so we can meet up in TP 🙏💕 Have a very blessed birthday and let’s hangout soon!!! Here’s my contribution to jolin unglams HAHAHAHAHAHAHAHA
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Placeholder Cards for 6 More People -->
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+            <img
+              src="/images/lockedinalien.gif"
+              class="card-img-top"
+              alt="Ilyas GIF"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModalIlyas"
+            />
+            <div class="card-body">
+              <h6 class="card-title">Ilyas</h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                happy 19th bday jolin thanks for helping me last year during the kangaroo saga with lincoln, jonny and zachary. have a prosperous new year 🙏
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+            <img
+              src="/images/yekhei.jpg"
+              class="card-img-top"
+              alt="Placeholder Photo"
+              data-bs-toggle="modal"
+              data-bs-target="#yekhei"
+            />
+            <div class="card-body">
+              <h6 class="card-title">Yek Hei </h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                Dear Jolin, it is to my utmost pleasure to wholeheartedly congratulate you for turning 19. To think that we met 6 years ago but I feel like I’ve known you 1/3 of my life.Well aside from my fabulous humor, I wish you a happy birthday and may only good things come your way. Stay healthy and absolutely crazy!!!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+            <img
+            src="/images/saanvi.jpg"
+            class="card-img-top"
+            alt="Placeholder Photo"
+            data-bs-toggle="modal"
+            data-bs-target="#Saanvi"
+          />
+            <div class="card-body">
+              <h6 class="card-title">Saanvi </h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                Hi jolin ,, thankyou so much for being such a good friend in tk and having some of the same interests as me (dc and fashion mostly) im glad we are friends now hope and you have a great birthday
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+            <img
+              src="/images/Timothy.jpg"
+              class="card-img-top"
+              alt="Placeholder Photo"
+              data-bs-toggle="modal"
+              data-bs-target="#Timothy"
+            />
+            <div class="card-body">
+              <h6 class="card-title">Timothy </h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                Dear Jolin,
+                If you are reading this it means that you have turn 19 years of age WOOOOO !!! 💯I want to wish you a very happy birthday 🎂 and a fantastic year a head, I've heard poly can be tough but I'm sure you'll make it through. I have a feeling that 2025 will be an excellent year and hope that this birthday of yours will only be the beginning of the great experiences you'll experience going forward into the year. 
+                🎉 HAPPY 19TH BIRTHDAY🎉
+                Best Regards,
+                Tristan 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+            <img
+              src="/images/Aaron.jpg"
+              class="card-img-top"
+              alt="Aaron"
+              data-bs-toggle="modal"
+              data-bs-target="#Aaron"
+            />
+            <div class="card-body">
+              <h6 class="card-title">Aaron </h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                Happy birthday u troller. 
+
+                I'm assuming you've seen my WhatsApp message already, so I'll keep this succinct. Thanks again for the 6 years of friendship, honestly kinda crazy that it's been that long, and that this all began because you yoinked my water bottle. Cheers to 6 years, and many many more to come, or as we like to say, till the end of time.
+                
+                Have an awesome 19th birthday man 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+              <img
+                  src="/images/Christian.jpg"
+                  class="card-img-top"
+                  alt="Christian"
+                  data-bs-toggle="modal"
+                  data-bs-target="#Christian"
+              />
+              <div class="card-body">
+                  <h6 class="card-title">Christian</h6>
+                  <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                      Happy birthday bro!  
+      
+                      You’ve been one of the realest friends I’ve had, and I appreciate all the laughs and chaos we’ve shared. Wishing you an amazing 19th filled with good vibes and even better memories. Let's make more to come!  
+                  </p>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+              <img
+                  src="/images/evan.png"
+                  class="card-img-top"
+                  alt="Evan"
+                  data-bs-toggle="modal"
+                  data-bs-target="#Evan"
+              />
+              <div class="card-body">
+                  <h6 class="card-title">Evan</h6>
+                  <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                    she’s the skibidiest of my sigma
+                  </p>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4 col-sm-6 mb-3">
+          <div class="card message-card">
+              <img
+                  src="/images/Aaryan.jpg"
+                  class="card-img-top"
+                  alt="Aaryan"
+                  data-bs-toggle="modal"
+                  data-bs-target="#Aaryan"
+              />
+              <div class="card-body">
+                  <h6 class="card-title">Aaryan</h6>
+                  <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                    hi lin ! happy 19th, i’m so grateful to be friends with you ! it’s been a crazy journey from 2020 when we first became friends, and i’m so grateful that i grew up with you, have an amazing year ❤❤
+                  </p>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 mb-3">
+        <div class="card message-card">
+            <img
+                src="/images/kokoko.jpg"
+                class="card-img-top"
+                alt="jonny"
+                data-bs-toggle="modal"
+                data-bs-target="#kokoko"
+            />
+            <div class="card-body">
+                <h6 class="card-title">KOKOKOKOKOKOKOKOKO</h6>
+                <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                  YOOOOOO HAPPY BIRTHDAY JOLIN 🔥🔥🔥🦅🦅🦅🦅🦅 
+
+                  although i only met you last year, you left me with quite a long lasting impression of you LOL 
+                  
+                  uhhhhhhh thanks for being around, it was very fun and entertaining 😃👍🏻 I wish you all the best in your future endeavours woooooooo 🔥🔥
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 mb-3">
+      <div class="card message-card">
+          <img
+              src="/images/del.jpg"
+              class="card-img-top"
+              alt="jonny"
+              data-bs-toggle="modal"
+              data-bs-target="#del"
+          />
+          <div class="card-body">
+              <h6 class="card-title">del</h6>
+              <p class="card-text" style="max-height: 100px; overflow-y: auto;">
+                happy birthday Fallen!! i'm so glad to get to know you and we match freaks so well kyaa😝 i love u mr beast i want you forever and ever... 
+
+              </p>
+          </div>
+      </div>
+  </div>
+      
+    
+        <!-- Repeat this block for more placeholders -->
+      </div>
+    </section>
+    
+    <!-- Modals for Existing Cards -->
+    <div class="modal fade" id="imageModalSieon" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img src="/images/sieon.jpg" class="img-fluid" alt="Sieon's Photo" />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="imageModalXY" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img src="/images/xy.jpg" class="img-fluid" alt="XY's Photo" />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="imageModalStella" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img src="/images/stella.jpg" class="img-fluid" alt="Stella's Photo" />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modals for Placeholder Images -->
+    <div
+  class="modal fade"
+  id="imageModalIlyas"
+  tabindex="-1"
+  aria-labelledby="imageModalLabelIlyas"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="/images/lockedinalien.gif" class="img-fluid" alt="Ilyas GIF" />
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <div class="modal fade" id="yekhei" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img src="/images/yekhei.jpg" class="img-fluid" alt="yekhei" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="Saanvi" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img src="/images/Saanvi.jpg" class="img-fluid" alt="Saanvi" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="modal fade" id="Timothy" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img src="/images/Timothy.jpg" class="img-fluid" alt="Timothy" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="Aaron" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img src="/images/Aaron.jpg" class="img-fluid" alt="Aaron" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="Christian" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-body text-center">
+                  <img src="/images/Christian.jpg" class="img-fluid" alt="Christian" />
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div class="modal fade" id="Evan" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-body text-center">
+                  <img src="/images/evan.png" class="img-fluid" alt="Evan" />
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div class="modal fade" id="Aaryan" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-body text-center">
+                  <img src="/images/Aaryan.jpg" class="img-fluid" alt="Aaryan" />
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="jonny" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img src="/images/jonny.jpg" class="img-fluid" alt="jonny" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="kokoko" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-body text-center">
+              <img src="/images/kokoko.jpg" class="img-fluid" alt="kokoko" />
+          </div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="del" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-body text-center">
+              <img src="/images/del.jpg" class="img-fluid" alt="del" />
+          </div>
+      </div>
+  </div>
+</div>
+
+    
+      
+  
+    <script src="bounce.js"></script>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var audioTracks = document.querySelectorAll("audio");
+        audioTracks.forEach(function (audio) {
+            audio.volume = 0.3;  // Set initial volume to 30%
+        });
+    });
+
+    function toggleMusic(audioId, buttonId) {
+        var audio = document.getElementById(audioId);
+        var button = document.getElementById(buttonId);
+
+        // Pause all other tracks before playing the selected one
+        document.querySelectorAll("audio").forEach((track) => {
+            if (track.id !== audioId) {
+                track.pause();
+                track.currentTime = 0;
+                var btn = document.querySelector(`[onclick*='${track.id}']`);
+                if (btn) btn.innerHTML = "🎵 Play " + btn.innerHTML.split(' ')[1];
+            }
+        });
+
+        // Toggle play/pause for the selected track
+        if (audio.paused) {
+            audio.play();
+            button.innerHTML = "⏸ Pause " + button.innerHTML.split(' ')[1];
+        } else {
+            audio.pause();
+            button.innerHTML = "🎵 Play " + button.innerHTML.split(' ')[1];
+        }
+    }
+
+    function setVolume(audioId, volume) {
+        var audio = document.getElementById(audioId);
+        audio.volume = volume;
+    }
+  </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var carousel = new bootstrap.Carousel(
+        document.getElementById("carouselExampleIndicators"),
+        {
+          interval: 3000,
+          wrap: true,
+        }
+      );
+    </script>
+  </body>
+</html>
